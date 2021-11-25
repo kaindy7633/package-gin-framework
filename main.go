@@ -1,9 +1,6 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/gin-gonic/gin"
 	"github.com/kaindy7633/package-gin-framework/bootstrap"
 	"github.com/kaindy7633/package-gin-framework/global"
 )
@@ -26,11 +23,6 @@ func main() {
 		}
 	}()
 
-	r := gin.Default()
-
-	r.GET("/ping", func(c *gin.Context) {
-		c.String(http.StatusOK, "pong")
-	})
-
-	_ = r.Run(":" + global.App.Config.App.Port)
+	// 启动服务器
+	bootstrap.RunServer()
 }
