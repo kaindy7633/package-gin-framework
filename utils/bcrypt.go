@@ -18,5 +18,5 @@ func BcryptMake(pwd []byte) string {
 func BcryptMakeCheck(pwd []byte, hashedPwd string) bool {
 	byteHash := []byte(hashedPwd)
 	err := bcrypt.CompareHashAndPassword(byteHash, pwd)
-	return err != nil
+	return err == nil
 }
