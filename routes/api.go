@@ -6,6 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/kaindy7633/package-gin-framework/app/common/request"
+	"github.com/kaindy7633/package-gin-framework/app/controllers/app"
 )
 
 // SetApiGroupRoutes 定义 api 分组路由
@@ -31,4 +32,6 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 			"message": "success",
 		})
 	})
+
+	router.POST("/auth/register", app.Register)
 }
