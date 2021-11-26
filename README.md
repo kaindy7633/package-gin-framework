@@ -18,3 +18,5 @@
 | utils           | 工具函数                       |
 | config.yaml     | 配置文件                       |
 | main.go         | 项目启动文件                   |
+
+详细教程参考：[https://juejin.cn/post/7016742808560074783](https://juejin.cn/post/7016742808560074783)

@@ -23,6 +23,9 @@ func main() {
 		}
 	}()
 
+	// 初始化校验器
+	bootstrap.InitializeValidator()
+
 	// 启动服务器
 	bootstrap.RunServer()
 }
