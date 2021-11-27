@@ -2,6 +2,7 @@ package services
 
 import (
 	"context"
+	"errors"
 	"strconv"
 	"time"
 
@@ -86,4 +87,15 @@ func (jwtService *jwtService) IsInBlacklist(tokenStr string) bool {
 	}
 
 	return true
+}
+
+// 根据不同客户端 token ，查询不同用户表数据
+func (jwtService *jwtService) GetUserInfo(GuardName string, id string) (err error, user JwtUser) {
+	switch GuardName {
+	case GuardName:
+		return UserService.GetUserInfo(id)
+	default:
+		err = errors.New("guard " + GuardName + " does not exist")
+	}
+	return
 }
